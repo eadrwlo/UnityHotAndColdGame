@@ -10,18 +10,39 @@ public class SphereToSetHandler : MonoBehaviour {
 		//transform.position = touchSphereRange.transform.position - Vector3.forward * 10f;
 		int magicNumberHalfSphereHeight = 40;
 		sphereBottomRenderMargin = (int)Screen.height - (int)GameObject.FindGameObjectWithTag ("hideShowSpHereButton").GetComponent<RectTransform> ().rect.height - magicNumberHalfSphereHeight;
+		GameObject.FindGameObjectWithTag ("winLabel").GetComponent<Text> ().enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		
 		if ((Input.touchCount > 0) && (Input.GetTouch (0).position).y < sphereBottomRenderMargin) 
 		{
-			Vector3 tempVector = new Vector3 (Camera.main.ScreenToWorldPoint (Input.GetTouch (0).position).x, 
-				                     Camera.main.ScreenToWorldPoint (Input.GetTouch (0).position).y,
-				                     touchSphereRange.transform.position.z);
-			touchSphereRange.transform.position = tempVector;
+			Vector3 sphereScreenPoint = Camera.main.WorldToScreenPoint (touchSphereRange.transform.position);
+			Vector3 inputTouchPosition = Input.GetTouch (0).position;
+			Debug.Log ("Wspolrzedne");
+			Debug.Log ("X palec" + inputTouchPosition.x);
+			Debug.Log ("Y palec" + inputTouchPosition.y);
+			Debug.Log ("X KULA" +  sphereScreenPoint.x );
+			Debug.Log ("Y KULA" + sphereScreenPoint.y) ;
+
+			if (GameObject.FindGameObjectWithTag ("sphereToSet").GetComponent<Renderer> ().enabled == true) 
+			{
+				Vector3 tempVector = new Vector3 (Camera.main.ScreenToWorldPoint (Input.GetTouch (0).position).x, 
+					                     Camera.main.ScreenToWorldPoint (Input.GetTouch (0).position).y,
+					                     touchSphereRange.transform.position.z);
+				touchSphereRange.transform.position = tempVector;
+			} else 
+			{
+				if ( (inputTouchPosition.x > sphereScreenPoint.x - 20) && (inputTouchPosition.x < sphereScreenPoint.x + 20) && (inputTouchPosition.y >  sphereScreenPoint.y - 20) && (inputTouchPosition.y < sphereScreenPoint.y + 20) ) 
+				{
+					Debug.Log ("Wspolrzene zgodne");
+					GameObject.FindGameObjectWithTag ("sphereToSet").GetComponent<Renderer> ().enabled = true;
+					GameObject.FindGameObjectWithTag ("winLabel").GetComponent<Text> ().enabled = true;
+				}
+			}
+
 		}
+
 	}
 }
