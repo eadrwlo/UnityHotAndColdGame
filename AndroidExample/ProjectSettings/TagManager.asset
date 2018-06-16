@@ -6,6 +6,7 @@ TagManager:
   tags:
   - sphereToSet
   - hideShowSpHereButton
+  - winLabel
   layers:
   - Default
   - TransparentFX
