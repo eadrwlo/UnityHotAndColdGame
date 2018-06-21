@@ -34,7 +34,7 @@ public class SphereToSetHandler : MonoBehaviour {
 				touchSphereRange.transform.position = tempVector;
 			} else 
 			{
-				if ( (inputTouchPosition.x > sphereScreenPoint.x - 20) && (inputTouchPosition.x < sphereScreenPoint.x + 20) && (inputTouchPosition.y >  sphereScreenPoint.y - 20) && (inputTouchPosition.y < sphereScreenPoint.y + 20) ) 
+				if ( (inputTouchPosition.x > sphereScreenPoint.x - 40) && (inputTouchPosition.x < sphereScreenPoint.x + 40) && (inputTouchPosition.y >  sphereScreenPoint.y - 40) && (inputTouchPosition.y < sphereScreenPoint.y + 40) ) 
 				{
 					Debug.Log ("Wspolrzene zgodne");
 					GameObject.FindGameObjectWithTag ("sphereToSet").GetComponent<Renderer> ().enabled = true;
