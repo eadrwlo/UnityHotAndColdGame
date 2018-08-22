@@ -134,3 +134,5 @@ C:\School\PG2D\UnityHotAndColdGame\AndroidExample\Temp\bin\Debug\UnityEditor.iOS
 C:\School\PG2D\UnityHotAndColdGame\AndroidExample\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\School\PG2D\UnityHotAndColdGame\AndroidExample\obj\Debug\Assembly-CSharp.dll
 C:\School\PG2D\UnityHotAndColdGame\AndroidExample\obj\Debug\Assembly-CSharp.pdb
+C:\School\PG2D\UnityHotAndColdGame\AndroidExample\Temp\bin\Debug\ChannelPurchase.dll
+C:\School\PG2D\UnityHotAndColdGame\AndroidExample\Temp\bin\Debug\UnityStore.dll

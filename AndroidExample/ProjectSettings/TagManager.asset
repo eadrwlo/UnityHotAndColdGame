@@ -7,6 +7,8 @@ TagManager:
   - sphereToSet
   - hideShowSpHereButton
   - winLabel
+  - failLabel
+  - timeRemaining
   layers:
   - Default
   - TransparentFX
