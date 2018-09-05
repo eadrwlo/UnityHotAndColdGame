@@ -26,7 +26,8 @@ public class SphereToSetHandler : MonoBehaviour {
 				if (Hide.timeLeft < -3) {
 					GameObject.FindGameObjectWithTag ("failLabel").GetComponent<Text> ().enabled = false;
 				}
-			} else {
+			} else if (GameObject.FindGameObjectWithTag("winLabel").GetComponent<Text>().enabled == false)
+            {
 				GameObject.FindGameObjectWithTag ("timeRemaining").GetComponent<Text> ().text = (int)Hide.timeLeft + "s";
 			}
 			if ((Input.touchCount > 0) && (Input.GetTouch (0).position).y < sphereBottomRenderMargin) {
