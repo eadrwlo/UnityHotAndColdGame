@@ -13,15 +13,20 @@ public class SphereToSetHandler : MonoBehaviour {
 		GameObject.FindGameObjectWithTag ("winLabel").GetComponent<Text> ().enabled = false;
 		GameObject.FindGameObjectWithTag ("failLabel").GetComponent<Text> ().enabled = false;
 		GameObject.FindGameObjectWithTag ("timeRemaining").GetComponent<Text> ().text = Hide.timeLeft + "s";
-	}
+        Ads ads = new Ads();
+        ads.ShowAd();
+    }
 	
 	// Update is called once per frame
 	void Update () 
 	{
 		if (Hide.isGameRunning) // We have to search for a ball
 		{
-			Hide.timeLeft -= Time.deltaTime;
-			if (Hide.timeLeft < 0) {
+            if (GameObject.FindGameObjectWithTag("winLabel").GetComponent<Text>().enabled == false)
+            {
+                Hide.timeLeft -= Time.deltaTime;
+            }
+            if (Hide.timeLeft < 0) {
 				GameObject.FindGameObjectWithTag ("failLabel").GetComponent<Text> ().enabled = true;
 				if (Hide.timeLeft < -3) {
 					GameObject.FindGameObjectWithTag ("failLabel").GetComponent<Text> ().enabled = false;
